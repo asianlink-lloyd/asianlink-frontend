@@ -1,0 +1,70 @@
+<template>
+	<view class="custom-header">
+		  <view class="header-left" @click="goBack">
+		    <text> < </text> <!-- You can replace this with an icon if preferred -->
+		  </view>
+		  <view class="header-title">
+		    <image src="../../static/asianlinkAI_FINAL APPROVED.png" mode=""></image>
+		  </view>
+		  <view class="header-right" @click="onSettings">
+		    <image src="@/static/notification1.png" mode=""></image> <!-- Replace with an icon or other functionality -->
+		  </view>
+		</view>
+</template>
+
+<script>
+export default {
+  props: {
+    title: {
+      type: String,
+      default: 'Custom Header'
+    }
+  },
+  methods: {
+    goBack() {
+		console.log("Back button clicked!")
+      uni.navigateBack(); // Go back to the previous page
+    },
+    onSettings() {
+      // Add any settings functionality here
+      console.log("Notification clicked");
+    }
+  }
+};
+</script>
+
+<style scoped>
+.custom-header {
+	width: 100%;
+	position: fixed;
+	display: flex;
+	padding: 49px 20px 8px 20px;
+	left: 0;
+	align-items: center;
+	justify-content: space-between;
+	z-index: 50;
+	background-color: #F8F8F8;	
+}
+.header-left text {
+	color: #A0A5AF;
+}
+.header-left {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 38px;
+	width: 38px;
+	background-color: #ffffff;
+	border-radius: 80px;
+	border: 1px solid rgba(160, 165, 175, 0.2); /* 20% opacity */
+}
+.header-right image {
+	width: 30px;
+	height: 30px;
+}
+.header-title image {
+	height: 28px;
+	width: 172px;
+}
+
+</style>
