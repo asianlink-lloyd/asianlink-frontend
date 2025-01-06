@@ -1,0 +1,130 @@
+{
+    "pages" : [
+        //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+        {
+            "path" : "pages/index/index",
+            "style" : {
+                "navigationBarTitleText" : "uni-app",
+                "navigationStyle" : "custom",
+				"animationType": "none",
+				"animationDuration": 0
+            }
+        },
+		{
+		    "path" : "pages/landing/landingScreen", 
+		    "style" : {
+		        "navigationBarTitleText" : "landing",
+				"navigationStyle" : "custom",
+				"animationType": "none",
+				"animationDuration": 0
+		    }
+		},
+        {
+            "path" : "pages/login/login",
+            "style" : {
+                "navigationBarTitleText" : "Login",
+				"navigationStyle" : "custom",
+				"animationType": "none",
+				"animationDuration": 0
+            }
+        },
+        {
+            "path" : "pages/register/register",
+            "style" : {
+                "navigationBarTitleText" : "Register",
+				"navigationStyle" : "custom",
+				"animationType": "none",
+				"animationDuration": 0
+            }
+        },
+		{
+		    "path" : "pages/publicService/publicService", 
+		    "style" : {
+		        "navigationBarTitleText" : "Public Service",
+				"navigationStyle" : "custom",
+				"animationType": "none",
+				"animationDuration": 0
+		    }
+		},
+		{
+		    "path" : "pages/news/news", 
+		    "style" : {
+		        "navigationBarTitleText" : "News",
+				"navigationStyle" : "custom",
+				"animationType": "none",
+				"animationDuration": 0
+		    }
+		},
+		{
+		    "path" : "pages/Ecommerce/Ecommerce", 
+		    "style" : {
+		        "navigationBarTitleText" : "Ecommerce",
+				"navigationStyle" : "custom",
+				"animationType": "none",
+				"animationDuration": 0
+		    }
+		},
+		{
+		    "path" : "pages/profile/profile", 
+		    "style" : {
+		        "navigationBarTitleText" : "Profile",
+				"navigationStyle" : "custom",
+				"animationType": "none",
+				"animationDuration": 0
+		    }
+		},
+		{
+		    "path" : "pages/profile/details", 
+		    "style" : {
+		        "navigationBarTitleText" : "Profile Detail",
+				"navigationStyle" : "custom",
+				"animationType": "none",
+				"animationDuration": 0
+		    }
+		},
+		{
+		    "path" : "pages/community/community", 
+		    "style" : {
+		        "navigationBarTitleText" : "Community",
+				"navigationStyle" : "custom",
+				"animationType": "none",
+				"animationDuration": 0
+		    }
+		},
+		{
+		    "path" : "pages/ai/aiScreen", 
+		    "style" : {
+		        "navigationBarTitleText" : "Ai",
+				"navigationStyle" : "custom",
+				"animationType": "none",
+				"animationDuration": 0
+		    }
+		},
+		{
+		    "path" : "pages/bookmark/bookmarkScreen", 
+		    "style" : {
+		        "navigationBarTitleText" : "Bookmark",
+				"navigationStyle" : "custom",
+				"animationType": "none",
+				"animationDuration": 0
+		    }
+		},
+		{
+			"path": "pages/Ecommerce/ProductDetails",
+			"style": {
+				"navigationBarTitleText": "Product Details",
+				"navigationStyle": "custom",
+				"animationType": "none",
+				"animationDuration": 0
+			}
+		}
+    ]
+	},
+    "globalStyle" : {
+        "navigationBarTextStyle" : "black",
+        "navigationBarTitleText" : "uni-app",
+        "navigationBarBackgroundColor" : "#F8F8F8",
+        "backgroundColor" : "#F8F8F8"
+    },
+    "uniIdRouter" : {}
+}
