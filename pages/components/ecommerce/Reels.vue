@@ -10,11 +10,44 @@
 					<text>Create Real</text>
 				</view>
 			</view>
-			<view v-for="(item, index) in reelLists" :key="index"  class="reel" :style="{ backgroundImage: `url(${item.backgroundImage})` }">
-				<text>{{ item.label }}</text>
+			<view v-for="(item, index) in reelLists" 
+				:key="index"  
+				class="reel" 
+				:style="{ backgroundImage: `url(${item.backgroundImage})` }"
+				@tap="openReelDetails(item)"
+				>
+				<text>{{ item.productName }}</text>
 			</view>
 		</view>
 	</scroll-view>
+	
+	<view v-if="selectedReel" class="details-modal">
+		<view class="details-content" :style="{ backgroundSize: 'cover', backgroundImage: `url(${selectedReel.backgroundImage})` }">
+			<view class="details-container">
+				<text class="details-productName">{{ selectedReel.productName }}</text>	
+				<text class="details-storeName">{{ selectedReel.storeName }}</text>	
+				<text class="details-description">{{ selectedReel.description }}</text>				
+			</view>	
+			<view class="button-container">
+				<button class="view-button">View Item</button>
+				<button class="add-button">Add to Cart</button>			
+			</view>
+			<view class="button-count-container">
+				<view class="button">
+					<image class="icon" src="@/static/favourite.png" mode=""></image>
+					<text>{{ selectedReel.likeCount }}</text>
+				</view>
+				<view class="button">
+					<image class="icon" src="@/static/bubble-chat-fill.png" mode=""></image>
+					<text>{{ selectedReel.likeCount }}</text>
+				</view>	
+				<view class="button">
+					<image class="icon" src="@/static/share-01.png" mode=""></image>
+					<text>{{ selectedReel.likeCount }}</text>
+				</view>				
+			</view>
+		</view>	
+	</view>
 </template>
 
 <script>
@@ -22,11 +55,20 @@
 		data() {
 			return {
 				reelLists: [
-					{ label: 'Furniture Store', backgroundImage: 'https://image.made-in-china.com/2f0j00jVNpbWDthirq/Home-Furniture-Living-Room-Display-Design-Cabinet-Door-for-Philippines.webp' },
-					{ label: 'Gadgets Store', backgroundImage: 'https://filebroker-cdn.lazada.sg/kf/Sbb430e7e829c48c7898e0df7b9282063f.jpg' },
-					{ label: 'Furniture Store', backgroundImage: 'https://image.made-in-china.com/2f0j00jVNpbWDthirq/Home-Furniture-Living-Room-Display-Design-Cabinet-Door-for-Philippines.webp' },
-					{ label: 'Furniture Store', backgroundImage: 'https://image.made-in-china.com/2f0j00jVNpbWDthirq/Home-Furniture-Living-Room-Display-Design-Cabinet-Door-for-Philippines.webp' },
-				]
+					{ storeName: 'Furniture Store', productName: 'BrandName Natural Face Oil', description: 'Glow naturally with our nourishing oils! Add it to your cart and treat your skin to a radiant, healthy shine.', backgroundImage: 'https://1716401.fs1.hubspotusercontent-na1.net/hub/1716401/hubfs/pink-tax.jpg?width=6000&height=4000&name=pink-tax.jpg', likeCount: 10, commentCount: 10, shareCount: 10 },
+					{ storeName: 'Gadgets Store', productName: 'BrandName Natural Face Oil', description: 'Glow naturally with our nourishing oils! Add it to your cart and treat your skin to a radiant, healthy shine.', backgroundImage: 'https://1716401.fs1.hubspotusercontent-na1.net/hub/1716401/hubfs/pink-tax.jpg?width=6000&height=4000&name=pink-tax.jpg', likeCount: 10, commentCount: 10, shareCount: 10 },
+					{ storeName: 'Furniture Store', productName: 'BrandName Natural Face Oil', description: 'Glow naturally with our nourishing oils! Add it to your cart and treat your skin to a radiant, healthy shine.', backgroundImage: 'https://1716401.fs1.hubspotusercontent-na1.net/hub/1716401/hubfs/pink-tax.jpg?width=6000&height=4000&name=pink-tax.jpg', likeCount: 10, commentCount: 10, shareCount: 10 },
+					{ storeName: 'Furniture Store', productName: 'BrandName Natural Face Oil', description: 'Glow naturally with our nourishing oils! Add it to your cart and treat your skin to a radiant, healthy shine.', backgroundImage: 'https://1716401.fs1.hubspotusercontent-na1.net/hub/1716401/hubfs/pink-tax.jpg?width=6000&height=4000&name=pink-tax.jpg', likeCount: 10, commentCount: 10, shareCount: 10 },
+				],
+				selectedReel: null,
+			}
+		},
+		methods: {
+			openReelDetails(reel) {
+				this.selectedReel = reel;
+			},
+			closeDetails() {
+				this.selectedReel = null;
 			}
 		}
 	}
@@ -56,6 +98,7 @@
 		padding: 8px;
 		flex-grow: 1; /* Allow each item to grow proportionally */
 		min-width: 150px;
+		background-position: center;
 	}
 	.reel text {
 		color: #ffffff;
@@ -89,5 +132,83 @@
 		font-size: 12px;
 		line-height: 18px;
 		font-weight: 400;
+	}
+	.details-modal {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.8);
+		z-index: 100;	
+	}
+	.details-content {
+		display: flex;
+		flex-direction: column;
+		justify-content: end;
+		width: 100%;;
+		height: 90%;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		padding: 20px
+	}
+	.details-container {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 8px;
+	}
+	.details-productName {
+		font-size: 20px;
+		font-weight: 600;
+		color: #ffffff;	
+	}
+	.details-storeName {
+		font-size: 12px;
+		color: rgba(255, 255, 255, 0.4);
+	}
+	.details-description {
+		font-size: 14px;
+		color: #ffffff;
+	}
+	.button-container {
+		display: flex;
+		gap: 8px;
+	}
+	button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		font-size: 16px;
+		border-radius: 8px;  	
+		color: #ffffff;	
+		height: 48px;
+	}
+	.view-button {
+		background-color: transparent;
+		border: 1px solid #ffffff;
+	}
+	.add-button {
+		background-color: navy;
+	}
+	.button-count-container {
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		top: 35%;
+		right: 0;
+		margin-right: 20px;
+	}
+	.icon {
+		width: 32px;
+		height: 32px;
+	}
+	.button {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+		align-items: center;
 	}
 </style>

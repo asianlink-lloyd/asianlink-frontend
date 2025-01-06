@@ -1,15 +1,8 @@
 {
-  "hash": "13f778e9",
-  "configHash": "426315a7",
+  "hash": "7e58cba2",
+  "configHash": "d3f99d1a",
   "lockfileHash": "b19faf31",
-  "browserHash": "834675fa",
-  "optimized": {
-    "jwt-decode": {
-      "src": "../../../../../node_modules/jwt-decode/build/esm/index.js",
-      "file": "jwt-decode.js",
-      "fileHash": "3db99176",
-      "needsInterop": false
-    }
-  },
+  "browserHash": "d1af9941",
+  "optimized": {},
   "chunks": {}
 }

@@ -1,6 +1,10 @@
 <template>
 	<view class="item-continer">
-		<view v-for="product in products" :key="product.id" class="profile">
+		<view 
+			v-for="product in products" 
+			:key="product.id" 
+			class="profile"
+			@click="viewDetails(product.id)">
 			<view class="item-img">		
 			</view>
 			<view class="item-text-container">
@@ -43,6 +47,12 @@
 				} catch (err) {
 					console.error('Request failed:', err);
 				}
+			},
+			
+			viewDetails(productId) {
+				uni.navigateTo({
+					url: `/pages/Ecommerce/ProductDetails?id=${productId}`,
+				});
 			},
 
 			// Method to get the price of the default variant

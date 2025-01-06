@@ -108,8 +108,17 @@
 				"animationType": "none",
 				"animationDuration": 0
 		    }
+		},
+		{
+			"path": "pages/Ecommerce/ProductDetails",
+			"style": {
+				"navigationBarTitleText": "Product Details",
+				"navigationStyle": "custom",
+				"animationType": "none",
+				"animationDuration": 0
+			}
 		}
-    ];
+    ]
 	},
     "globalStyle" : {
         "navigationBarTextStyle" : "black",
